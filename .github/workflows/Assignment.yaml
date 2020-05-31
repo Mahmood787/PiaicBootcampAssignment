@@ -21,11 +21,11 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - name: Installing node.js
-      run:  action/setup-node@v2-beta
+      uses:  actions/setup-node@v2-beta
       with: 
         node-version: 12
     - name: Install Surge
       run: npm install -g surge
-      run: surge ./PiaicbootcampAliKhan.surge.sh --token ${{secrets.PIAIC_SURGE_TOKEN}}  
+      run: surge ./ PiaicbootcampAliKhan.surge.sh --token ${{secrets.PIAIC_SURGE_TOKEN}}  
 
     
